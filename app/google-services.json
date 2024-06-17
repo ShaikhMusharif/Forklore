@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "653836979999",
+    "project_id": "my-application-forklore",
+    "storage_bucket": "my-application-forklore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653836979999:android:ba4ed7c2d25004cd1baa2a",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuCoP-ELG75u3S09k_-kulAEHlZzCClyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
