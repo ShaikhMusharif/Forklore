@@ -9,22 +9,23 @@ import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityIntroBinding;
 
 public class IntroActivity extends BaseActivity {
-ActivityIntroBinding binding;
+    ActivityIntroBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityIntroBinding.inflate(getLayoutInflater());
+        binding = ActivityIntroBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setVariable();
-        getWindow().setStatusBarColor(Color.parseColor("#FFE485"));
+        getWindow().setStatusBarColor(Color.parseColor("#FFE4B5"));
     }
 
     private void setVariable() {
         binding.loginBtn.setOnClickListener(v -> {
-            if(mAuth.getCurrentUser()!=null){
+            if (mAuth.getCurrentUser() != null) {
                 startActivity(new Intent(IntroActivity.this, MainActivity.class));
-            }else{
+            } else {
                 startActivity(new Intent(IntroActivity.this, LoginActivity.class));
             }
         });

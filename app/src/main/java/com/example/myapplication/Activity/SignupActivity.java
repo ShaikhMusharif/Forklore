@@ -1,17 +1,13 @@
 package com.example.myapplication.Activity;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivitySignupBinding;
@@ -20,7 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 
 public class SignupActivity extends BaseActivity {
-ActivitySignupBinding binding;
+    ActivitySignupBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +33,19 @@ ActivitySignupBinding binding;
             String email = binding.userEdt.getText().toString();
             String password = binding.passEdt.getText().toString();
 
-            if(password.length()<6){
-                Toast.makeText(SignupActivity.this,"your password must be 6 character", Toast.LENGTH_SHORT).show();
+            if (password.length() < 6) {
+                Toast.makeText(SignupActivity.this, "your password must be 6 character", Toast.LENGTH_SHORT).show();
                 return;
             }
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(SignupActivity.this, task -> {
-                if(task.isSuccessful()){
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignupActivity.this, task -> {
+                if (task.isSuccessful()) {
                     Log.i(TAG, "onComplete: ");
                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
-                }else {
-                    Log.i(TAG, "failure: "+task.getException());
-                    Toast.makeText(SignupActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.i(TAG, "failure: " + task.getException());
+                    Toast.makeText(SignupActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                 }
-        });
+            });
         });
     }
 }
