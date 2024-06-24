@@ -1,1 +1,1 @@
-Folklore - An Android App
+Folklore - An Android Food App
